@@ -45,11 +45,14 @@ Once added, you can load it into Photoshop by clicking the ••• button on t
 
 - Here you can enable ```Watch``` mode, which offers hot reload while developing inside Photoshop
 
+## UI library
+
+The app uses [Spectrum CSS](https://react-spectrum.adobe.com/react-spectrum/index.html)
 ## What this plugin does
 
 This plugin doesn't do much, but does illustrate how to create two panels in Photoshop with `entrypoints.setup`, and how to create flyout menus. It also demonstrates the use of several Spectrum UXP widgets to create a simple color picker in the primary panel.
 
-### Common Issues 
+### Common Issues
 
 If you're getting errors with `npm install`, we can reinstall the project dependencies. Let's first make sure to delete `node_modules/*` from the `template` folder as well as the `package-lock.json` and `yarn.lock` file. Staying in the `template` directory, run `npm install` again and this will regenerate your `package-lock.json` file. 
 
@@ -62,3 +65,4 @@ Failed to invoke the stat. File Path: /Desktop/tmp react uxp/plugin/index.js
 ```
 
 **Remember to specify the dist folder for Adobe UXP Developer tool by pressing ```more > advanced > Plugin Dest folder```**
+
