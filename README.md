@@ -12,12 +12,6 @@ After you ensure that your terminal is in the root of this project, use `npm` to
 npm install
 ```
 
-If you prefer to use `yarn`, after you generate the `package-lock.json` file you can run the following line to import dependencies to a `yarn.lock` file: 
-
-```bash
-yarn import
-```
-
 ## Build Process
 
 There are two ways to build the plugin for use in Photoshop:
