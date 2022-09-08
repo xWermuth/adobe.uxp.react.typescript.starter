@@ -14,9 +14,6 @@ npm install
 
 ## Build Process
 
-There are two ways to build the plugin for use in Photoshop:
-
-* `yarn watch` (or `npm watch`) will build a development version of the plugin, and recompile everytime you make a change to the source files. The result is placed in `dist` folder. 
 * `yarn build` (or `npm build`) will build a production version of the plugin and place it in `dist` folder. It will not update every time you make a change to the source files.
 
 > You **must** run either `watch` or `build` prior to trying to use within Photoshop!
