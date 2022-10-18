@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/buttons/Button';
 import ButtonGroup from '../components/buttons/ButtonGroup';
 
-export const MoreDemos: React.FC = () => {
+export const MoreDemos: React.FC = (props) => {
   return (
     <div className="mybutton">
       <Button variant="cta">overBackground</Button>

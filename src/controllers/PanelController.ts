@@ -57,6 +57,8 @@ export class PanelController {
   destroy() {}
 
   invokeMenu(id) {
+    console.log('invoked ', id);
+
     const menuItem = this[_menuItems].find((c) => c.id === id);
     if (menuItem) {
       const handler = menuItem.oninvoke;
