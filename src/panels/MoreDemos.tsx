@@ -1,15 +1,15 @@
 import React from 'react';
-import ActionButton from '../components/buttons/ActionButton';
+import Button from '../components/buttons/Button';
+import ButtonGroup from '../components/buttons/ButtonGroup';
 
 export const MoreDemos: React.FC = () => {
-  const [count, setCount] = React.useState(0);
   return (
-    <ActionButton
-      onClick={(e) => {
-        setCount((c) => c + 1);
-      }}
-    >
-      {count} Edits
-    </ActionButton>
+    <div className="mybutton">
+      <Button variant="cta">overBackground</Button>
+      <Button variant="overBackground">overBackground</Button>
+      <Button variant="primary">primary</Button>
+      <Button variant="secondary">secondary</Button>
+      <Button variant="warning">warning</Button>
+    </div>
   );
 };

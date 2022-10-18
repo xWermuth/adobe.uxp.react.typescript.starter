@@ -13,7 +13,7 @@ interface BodyProps {
   style?: string;
   ref?: React.RefObject<HTMLElement>;
   onClick?(e: React.MouseEvent<HTMLHeadElement, MouseEvent>): void;
-  className?: string;
+  class?: string;
 }
 
 declare global {

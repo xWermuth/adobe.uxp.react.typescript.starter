@@ -6,7 +6,7 @@ interface DividerProps {
   size?: DividerSize;
   onClick?(e: React.MouseEvent<HTMLHeadElement, MouseEvent>): void;
   ref?: React.RefObject<HTMLElement>;
-  className?: string;
+  class?: string;
 }
 
 declare global {

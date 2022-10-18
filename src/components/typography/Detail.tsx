@@ -10,7 +10,7 @@ interface DetailProps {
   size?: DetailSize;
   weight?: DetailWeight;
   ref?: React.RefObject<HTMLElement>;
-  className?: string;
+  class?: string;
 }
 
 declare global {

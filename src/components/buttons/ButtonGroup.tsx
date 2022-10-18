@@ -8,7 +8,7 @@ interface ButtonGroupProps {
   style?: string;
   onClick?(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void;
   ref?: React.RefObject<HTMLElement>;
-  className?: string;
+  class?: string;
 }
 
 declare global {

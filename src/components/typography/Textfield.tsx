@@ -11,7 +11,7 @@ interface TextFieldProps {
   style?: string;
   onChange?(e: React.ChangeEvent<HTMLInputElement>): void;
   ref?: React.RefObject<HTMLElement>;
-  className?: string;
+  class?: string;
 }
 
 declare global {

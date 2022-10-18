@@ -29,7 +29,7 @@ export const About: React.FC<Props> = (props) => {
         replace <code>index.jsx</code> and the components with your own.
       </Body>
       <webview id="webview" width="100%" height="360px" src="https://www.google.com"></webview>
-      <Body className="well">
+      <Body class="well">
         <Icon name="ui:InfoSmall" size="s"></Icon>
         We've also included the `WC` component and a couple of controllers. You do not need to use these in your own projects, but you are
         welcome to do so.
