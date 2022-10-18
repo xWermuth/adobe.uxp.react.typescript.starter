@@ -38,8 +38,7 @@
     "webpack-cli": "^4.9.1"
   },
   "dependencies": {
-    "@adobe/react-spectrum": "^3.21.1",
-    "@react-spectrum/color": "^3.0.0-beta.15",
+    "@adobe/react-spectrum": "^3.22.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

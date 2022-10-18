@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom';
-import { ControllerProps } from '../interfaces/Controller.interface';
+import { createRoot } from 'react-dom/client';
+import { ControllerProps } from '../interfaces/Entrypoints.interface';
 
 const _id = Symbol('_id');
 const _root = Symbol('_root');
@@ -8,7 +8,7 @@ const _Component = Symbol('_Component');
 const _menuItems = Symbol('_menuItems');
 
 export class PanelController {
-  constructor(Component: JSX.Element | (() => JSX.Element), { id, menuItems }: ControllerProps) {
+  constructor(Component: React.FC | (() => React.FC<any>), { id, menuItems }: ControllerProps) {
     this[_id] = null;
     this[_root] = null;
     this[_attachment] = null;
@@ -35,7 +35,8 @@ export class PanelController {
     this[_root].style.overflow = 'auto';
     this[_root].style.padding = '8px';
 
-    ReactDOM.render(this[_Component]({ panel: this }), this[_root]);
+    const root = createRoot(this[_root]);
+    root.render(this[_Component]({ panel: this }));
 
     return this[_root];
   }
@@ -56,6 +57,8 @@ export class PanelController {
   destroy() {}
 
   invokeMenu(id) {
+    console.log('id: ', id);
+
     const menuItem = this[_menuItems].find((c) => c.id === id);
     if (menuItem) {
       const handler = menuItem.oninvoke;

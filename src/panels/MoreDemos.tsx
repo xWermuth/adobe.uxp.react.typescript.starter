@@ -1,17 +1,15 @@
 import React from 'react';
-import { Button } from '@adobe/react-spectrum';
+import { ActionButton, Button, defaultTheme, Text, TextField, View } from '@adobe/react-spectrum';
 import { Hello } from '../components/Hello';
-import PlayIcon from '@spectrum-icons/workflow/Play';
+import Edit from '@spectrum-icons/workflow/Edit';
+import Provider from '../components/provider/Provider';
 
-export const MoreDemos = () => {
+export const MoreDemos: React.FC = () => {
+  const [count, setCount] = React.useState(0);
   return (
-    <>
-      <Hello message="there" />
-      <Button variant="primary">
-        <span slot="icon">
-          <PlayIcon />
-        </span>
-      </Button>
-    </>
+    <Provider theme={defaultTheme} UNSAFE_style={{ background: 'transparent' }}>
+      <ActionButton onPress={() => setCount((c) => c + 1)}>{count} Edits</ActionButton>
+      {/* <button onClick={(e) => setCount((c) => c + 1)}>{count}</button> */}
+    </Provider>
   );
 };

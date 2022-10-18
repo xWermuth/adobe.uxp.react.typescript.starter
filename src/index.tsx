@@ -38,9 +38,11 @@ const moreDemosController = new PanelController(() => <MoreDemos />, {
     {
       id: 'reload2',
       label: 'Reload Plugin',
-      enabled: true,
+      enabled: false,
       checked: false,
-      oninvoke: () => location.reload(),
+      oninvoke: () => {
+        location.reload();
+      },
     },
   ],
 });

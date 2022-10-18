@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { ControllerProps } from '../interfaces/Controller.interface';
+import { ControllerProps } from '../interfaces/Entrypoints.interface';
 
 const _id = Symbol('_id');
 const _root = Symbol('_root');
@@ -33,8 +33,10 @@ export class CommandController {
   async run() {
     if (!this[_root]) {
       this[_root] = document.createElement('dialog');
+
       ReactDOM.render(this[_Component]({ dialog: this[_root] }), this[_root]);
     }
+
     document.body.appendChild(this[_root]);
 
     await this[_root].showModal(this[_dialogOpts]);
