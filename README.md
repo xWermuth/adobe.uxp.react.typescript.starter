@@ -2,6 +2,8 @@
 
 This plugin is a good place to get started when building a Photoshop plugin using React. It comes defined with all the dependencies that you'll need to get started. As this is a React project, you'll need to do some initial configuration before this will be usable in Photoshop.
 
+## Inspired by [thejustinwalsh](https://github.com/thejustinwalsh/react-uxp-spectrum)
+
 ## Install dependencies
 
 First, make sure that `npm` is installed on your system.
@@ -38,7 +40,8 @@ Once added, you can load it into Photoshop by clicking the ••• button on t
 
 ## UI library
 
-The app uses [Spectrum CSS](https://react-spectrum.adobe.com/react-spectrum/index.html)
+The app uses [Spectrum](https://developer.adobe.com/xd/uxp/uxp/reference-spectrum/User%20Interface/sp-action-button/). It is not component based yet, so we have to make our own. In the future the web widget will be accesible in UXP [Spectrum CSS](https://react-spectrum.adobe.com/react-spectrum/index.html).
+
 ## What this plugin does
 
 This plugin doesn't do much, but does illustrate how to create two panels in Photoshop with `entrypoints.setup`, and how to create flyout menus. It also demonstrates the use of several Spectrum UXP widgets to create a simple color picker in the primary panel.

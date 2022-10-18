@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { ControllerProps } from '../interfaces/Entrypoints.interface';
 
 const _id = Symbol('_id');
@@ -33,8 +33,8 @@ export class CommandController {
   async run() {
     if (!this[_root]) {
       this[_root] = document.createElement('dialog');
-
-      ReactDOM.render(this[_Component]({ dialog: this[_root] }), this[_root]);
+      const root = createRoot(this[_root]);
+      root.render(this[_Component]({ dialog: this[_root] }));
     }
 
     document.body.appendChild(this[_root]);
