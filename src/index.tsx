@@ -1,51 +1,30 @@
 import React from 'react';
-
 import './styles.css';
 import { entrypoints } from 'uxp';
 import { PanelController } from './controllers/PanelController';
 import { CommandController } from './controllers/CommandController';
-import { About } from './components/About';
-import { Demos } from './panels/Demos';
-import { MoreDemos } from './panels/MoreDemos';
+import { CommandMap, Commands } from './commands/commands';
+import { Panels } from './panels/panels';
+import { MenuItems } from './interfaces/UxpMenuItems.interface';
+import { RT } from './interfaces/UxpRT.interface';
 
-const aboutController = new CommandController(({ dialog }) => <About dialog={dialog} />, {
-  id: 'showAbout',
-  title: 'React Starter Plugin Demo',
-  size: { width: 480, height: 480 },
-});
-const demosController = new PanelController(() => <Demos />, {
-  id: 'demos',
-  menuItems: [
-    {
-      id: 'reload1',
-      label: 'Reload Plugin',
-      enabled: true,
-      checked: false,
-      oninvoke: () => location.reload(),
-    },
-    {
-      id: 'dialog1',
-      label: 'About this Plugin',
-      enabled: true,
-      checked: false,
-      oninvoke: () => aboutController.run(),
-    },
-  ],
-});
-const moreDemosController = new PanelController(() => <MoreDemos />, {
-  id: 'moreDemos',
-  menuItems: [
-    {
-      id: 'reload2',
-      label: 'Reload Plugin',
-      enabled: false,
-      checked: false,
-      oninvoke: () => {
-        location.reload();
-      },
-    },
-  ],
-});
+const commands = Commands.reduce<CommandMap>((acc, { component, ...command }) => {
+  acc[command.id] = new CommandController(component, command);
+  return acc;
+}, {} as CommandMap);
+
+const panels = Panels.reduce((acc, { component, menuItems, ...panel }) => {
+  const _menuItems = menuItems.reduce<MenuItems[]>((acc, menuItem) => {
+    const oninvoke = (): RT => menuItem.oninvoke(commands);
+    acc.push({ ...menuItem, oninvoke });
+    return acc;
+  }, []);
+  acc[panel.id] = new PanelController(component, { ...panel, menuItems: _menuItems });
+  //
+  return acc;
+}, {});
+
+console.log('panelss: ', panels);
 
 entrypoints.setup({
   plugin: {
@@ -56,11 +35,6 @@ entrypoints.setup({
       /* optional */ console.log('destroyed');
     },
   },
-  commands: {
-    showAbout: aboutController,
-  },
-  panels: {
-    demos: demosController,
-    moreDemos: moreDemosController,
-  },
+  commands,
+  panels: panels,
 });

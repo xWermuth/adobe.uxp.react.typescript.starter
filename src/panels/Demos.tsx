@@ -8,7 +8,7 @@ export const Demos: React.FC = () => {
   const [progress, setProgress] = useState(10);
   return (
     <div>
-      <Heading size="M">Hello world</Heading>
+      <Heading size="M">aHello world</Heading>
 
       <Divider size="large" />
       <ActionButton onClick={() => setProgress((p) => Math.ceil(p + 10))}>Add progress</ActionButton>

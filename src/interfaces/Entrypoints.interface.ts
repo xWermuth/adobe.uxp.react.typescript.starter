@@ -1,21 +1,17 @@
+import { MenuItems } from './UxpMenuItems.interface';
 import { UxpCommandInfo } from './UxpCommandInfo.interface';
 import { UxpPanelInfo } from './UxpPanelInfo.interface';
 import { UxpPluginInfo } from './UxpPluginInfo.interface';
+import { RT } from './UxpRT.interface';
 
 export interface ControllerProps {
   id: string;
   title?: string;
   size?: { width: number; height: number };
-  menuItems?: {
-    id: string;
-    label: string;
-    enabled: boolean;
-    checked: boolean;
-    oninvoke(): RT;
-  }[];
+  menuItems?: MenuItems[];
 }
 
-type RT = void | Promise<void>;
+export type ControllerComponent = (...args: any) => JSX.Element;
 
 interface MenuItem {
   id: string;

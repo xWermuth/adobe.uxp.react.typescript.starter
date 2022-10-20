@@ -1,3 +1,4 @@
+import { ControllerComponent } from './../interfaces/Entrypoints.interface';
 import { createRoot } from 'react-dom/client';
 import { ControllerProps } from '../interfaces/Entrypoints.interface';
 
@@ -8,7 +9,7 @@ const _Component = Symbol('_Component');
 const _menuItems = Symbol('_menuItems');
 
 export class PanelController {
-  constructor(Component: React.FC | (() => React.FC<any>), { id, menuItems }: ControllerProps) {
+  constructor(Component: React.FC | ControllerComponent, { id, menuItems }: ControllerProps) {
     this[_id] = null;
     this[_root] = null;
     this[_attachment] = null;

@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { ControllerProps } from '../interfaces/Entrypoints.interface';
+import { ControllerComponent, ControllerProps } from '../interfaces/Entrypoints.interface';
 
 const _id = Symbol('_id');
 const _root = Symbol('_root');
@@ -7,7 +7,7 @@ const _Component = Symbol('_Component');
 const _dialogOpts = Symbol('_dialogOpts');
 
 export class CommandController {
-  constructor(Component: JSX.Element | ((...args: any[]) => JSX.Element), { id, ...dialogOpts }: ControllerProps) {
+  constructor(Component: React.FC | ControllerComponent, { id, ...dialogOpts }: ControllerProps) {
     this[_id] = null;
     this[_root] = null;
     this[_Component] = null;
