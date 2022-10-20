@@ -15,6 +15,7 @@
   "author": "Alexander Majgaard Wermuth",
   "license": "MIT",
   "devDependencies": {
+    "@apoorva2405/uxp-devtools-cli": "^1.2.1-test",
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/plugin-syntax-class-properties": "^7.10.4",

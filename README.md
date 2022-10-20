@@ -21,9 +21,6 @@ sudo npm install yarn  --location=global
 
 # Add yarn to path
 export PATH="$(yarn global bin):$PATH"
-
-# Install dev tools global
-npm install @adobe/uxp-devtools-cli --location=global
 ```
 
 ### UXP commands
