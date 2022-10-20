@@ -26,8 +26,14 @@ export PATH="$(yarn global bin):$PATH"
 ### UXP commands
 
 ```bash
+# Start service server - REQUIRED
 uxp service start
-cd plugin && uxp plugin load --apps 23.5.2 && cd..
+
+# Enable devtools - REQUIRED
+uxp devtools enable
+
+# Disable devtools
+uxp devtools disable
 
 # Loading
 uxp plugin load --manifest "dist/manifest.json"
@@ -50,10 +56,30 @@ npm install
 
 ## Developing
 
-```bash
-# Creates hot reload for when files in src folder changes and in the dist folder
-npm run watch 
+Remember to open Photoshop.
+First run in one terminal:
 
+```bash
+# Starts the dev service for photoshop
+npm run service
+```
+
+Then in another terminal run:
+
+```bash
+# Loads the plugin into photoshop and devtools
+npm run init
+```
+
+Then for hot reload run:
+
+```bash
+npm run watch 
+```
+
+Below is what `npm run watch` consists of:
+
+```bash
 # Hot reload for when files in the src folder changes
 npm run ts:watch
 
