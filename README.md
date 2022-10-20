@@ -4,7 +4,44 @@ This plugin is a good place to get started when building a Photoshop plugin usin
 
 ## Inspired by [thejustinwalsh](https://github.com/thejustinwalsh/react-uxp-spectrum)
 
+
+## Debugging
+
+UXP is used for debugging the application. There is both at UI interface in Adobe Creative Cloud Store and a CLI. This application uses the CLI script to run the application in watch mode (*hot reload*). You can either choose to use the UXP gui to show logs or debug **or** use the CLI to show logs. The two does the same - it is just matter of preference.
+
+## UXP CLI
+
+**[Windows](https://github.com/adobe-uxp/devtools-cli/blob/main/packages/uxp-devtools-cli/README.md#getting-started)**
+
+**``MAC``**
+
+```bash
+# Install yarn
+sudo npm install yarn  --location=global
+
+# Add yarn to path
+export PATH="$(yarn global bin):$PATH"
+
+# Install dev tools global
+npm install @adobe/uxp-devtools-cli --location=global
+```
+
+### UXP commands
+
+```bash
+uxp service start
+cd plugin && uxp plugin load --apps 23.5.2 && cd..
+
+# Loading
+uxp plugin load --manifest "dist/manifest.json"
+
+#unloading
+cd dist && uxp plugin unload && cd ..
+```
+
 ## Install dependencies
+
+### Node modules
 
 First, make sure that `npm` is installed on your system.
 
@@ -16,15 +53,23 @@ npm install
 
 ## Build Process
 
-* `yarn build` (or `npm build`) will build a production version of the plugin and place it in `dist` folder. It will not update every time you make a change to the source files.
+* `npm build` will build a production version of the plugin and place it in `dist` folder. It will not update every time you make a change to the source files.
 
 > You **must** run either `watch` or `build` prior to trying to use within Photoshop!
+
+### Using UXP UI
 
 ## Specify dest folder
 
 Remember to specify dest folder inside the UXP Developer Tools application
 
 **```••• button more > advanced > Plugin Dest folder```**
+
+**```Path to dest```**
+
+```text
+../dist
+```
 
 ## Launching in Photoshop
 
@@ -59,4 +104,3 @@ Failed to invoke the stat. File Path: /Desktop/tmp react uxp/plugin/index.js
 ```
 
 **Remember to specify the dist folder for Adobe UXP Developer tool by pressing ```more > advanced > Plugin Dest folder```**
-

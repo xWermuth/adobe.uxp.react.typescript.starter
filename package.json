@@ -9,6 +9,7 @@
     "uxp:reload": "cd dist && uxp plugin reload",
     "uxp:watch": "cd dist && nodemon --exec \"uxp plugin reload\" -e js,css,html",
     "uxp:debug": "cd dist && uxp plugin debug",
+    "uxp:test": "cd dist && uxp plugin test --port 4789 ",
     "test": "jest"
   },
   "author": "Alexander Majgaard Wermuth",
