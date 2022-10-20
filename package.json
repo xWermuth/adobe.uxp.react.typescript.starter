@@ -5,6 +5,7 @@
     "preinstall": "npx npm-force-resolutions",
     "service": "uxp service start",
     "init": "uxp devtools enable && npm run load ",
+    "shutdown": "uxp devtools disable && cd dist && uxp plugin unload",
     "watch": "npm run ts:watch & npm run uxp:watch",
     "ts:watch": "nodemon -w src -e js,jsx,ts,tsx,json,css,html -w webpack.config.js -x npm run build",
     "build": "webpack --mode development",
