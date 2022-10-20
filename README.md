@@ -48,6 +48,19 @@ After you ensure that your terminal is in the root of this project, use `npm` to
 npm install
 ```
 
+## Developing
+
+```bash
+# Creates hot reload for when files in src folder changes and in the dist folder
+npm run watch 
+
+# Hot reload for when files in the src folder changes
+npm run ts:watch
+
+# Watches when files in dist folder changes and notifies Photoshop
+npm run uxp:watch
+```
+
 ## Build Process
 
 * `npm build` will build a production version of the plugin and place it in `dist` folder. It will not update every time you make a change to the source files.
