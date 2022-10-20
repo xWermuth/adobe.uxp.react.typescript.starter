@@ -24,8 +24,6 @@ const panels = Panels.reduce((acc, { component, menuItems, ...panel }) => {
   return acc;
 }, {});
 
-console.log('panelss: ', panels);
-
 entrypoints.setup({
   plugin: {
     create(plugin) {
@@ -36,5 +34,5 @@ entrypoints.setup({
     },
   },
   commands,
-  panels: panels,
+  panels,
 });

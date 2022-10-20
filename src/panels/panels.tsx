@@ -40,16 +40,3 @@ export const Panels: Readonly<Panels[]> = [
     menuItems: [{ id: 'reload2', label: 'Reload Plugin', enabled: true, checked: false, oninvoke: () => location.reload() }],
   },
 ];
-
-interface Todo {
-  title: string;
-  description: string;
-  completed: boolean;
-}
-
-type TodoPreview = Pick<Todo, 'title' | 'completed'>;
-
-const todo: TodoPreview = {
-  title: 'Clean room',
-  completed: false,
-};
